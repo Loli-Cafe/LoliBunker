@@ -6,7 +6,7 @@ plugins {
 
 allprojects {
     group = "uwu.narumi"
-    version = "2.0"
+    version = "2.1"
 
     repositories {
         google()
