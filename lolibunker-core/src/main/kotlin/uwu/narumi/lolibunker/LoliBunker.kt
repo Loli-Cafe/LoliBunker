@@ -47,7 +47,7 @@ enum class LoliBunker {
     var stopping = AtomicBoolean(false)
     var running = AtomicBoolean(false)
 
-    val gatheredFiles = arrayListOf<File>()
+    val gatheredFiles = hashSetOf<File>()
 
     fun start(builder: Builder) {
         if (running.get() || stopping.get())
@@ -74,8 +74,8 @@ enum class LoliBunker {
                         Files.walk(path, Int.MAX_VALUE)
                             .filter { it.isDirectory().not() }
                             .map { it.toFile() }
-                            .collect(Collectors.toList())
-                            .distinct()
+                            .filter { gatheredFiles.contains(it).not() }
+                            .collect(Collectors.toSet())
                     )
                 } else if (gatheredFiles.contains(path.toFile()).not()) {
                     gatheredFiles.add(path.toFile())

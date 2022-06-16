@@ -49,7 +49,7 @@ setupBuilder {
     vendor = "LoliCafe"
     application = "LoliBunker"
     description = "https://github.com/loli-cafe/LoliBunker"
-    version = "2.0"
+    version = "2.1"
 
     icons = projectDir.absolutePath + "/src/main/resources/icon.png"
 
