@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration packages="uwu.narumi.lolibunker.logger" status="WARN" strict="true">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d{HH:mm:ss}] [%t/%level] - %msg%n"/>
+        </Console>
+        <File name="File" fileName="LoliBunker.log" immediateFlush="false" append="true">
+            <PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss}] [%t/%level] - %msg%n"/>
+        </File>
+        <InMemoryAppender name="UIAppender"/>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="File" level="debug"/>
+            <AppenderRef ref="Console" level="info"/>
+            <AppenderRef ref="UIAppender" level="info"/>
+        </Root>
+    </Loggers>
+</Configuration>
